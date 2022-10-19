@@ -1,5 +1,20 @@
 <script>
-
+  export default {
+    data:()=>({
+      contador:10,
+    }),
+    methods:{
+      incrementar(){
+        this.contador++
+      },
+      disminuir(){
+        this.contador--
+      },
+      reset(){
+        this.contador=10
+      }
+    }
+  }
 </script>
 
 <template>
@@ -7,10 +22,10 @@
   <h1>Hola mundo de Vue</h1>
   <hr />
 
-  <h2>Contador: 0</h2>
-  <button>+1</button>
-  <button>+1</button>
-  <button>Reset</button>
+  <h2>Contador: {{ contador }}</h2>
+  <button @click="incrementar()">+1</button>
+  <button @click="disminuir()">-1</button>
+  <button @click="reset()">Reset</button>
 
 
 </template>
